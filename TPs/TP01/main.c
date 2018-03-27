@@ -3,8 +3,6 @@
 #include <conio.h>
 #include "funciones.h"
 
-//Prueba Git
-
 int main(){
 
     char seguir='s';
