@@ -1,5 +1,6 @@
 # Ignora todos los archivos
 *.*
+*
 # No ignora las siguientes extensiones
 !*.c
 !*.h
