@@ -1,5 +1,7 @@
-TPs/TP01/TP01.cbp
-TPs/TP01/TP01.depend
-TPs/TP01/TP01.layout
-TPs/TP01/bin/
-TPs/TP01/obj/
+# Ignora todos los archivos
+*.*
+# No ignora las siguientes extensiones
+!*.c
+!*.h
+# No ignora los siguientes archivos
+!.gitignore
