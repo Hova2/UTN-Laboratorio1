@@ -8,7 +8,10 @@ float funcionMultiplicacion(float,float);
 float funcionDivision(float,float);
 float funcionFactorial(float);
 char esEntero(float);
-void imprimirResultado(float);
+void imprimirResultado(int,float);
 void imprimirError(int);
+void existenOperandos(char,char,int,float,float);
+void existeDivision(float,float);
+void existeFactorial(char,float);
 
 #endif // FUNCIONES_H_INCLUDED

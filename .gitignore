@@ -6,3 +6,4 @@
 !*.h
 # No ignora los siguientes archivos
 !.gitignore
+!README.md

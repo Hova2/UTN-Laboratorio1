@@ -7,8 +7,8 @@ int main(){
 
     char seguir='s';
     int opcion=0;
-    char existeOperador1=0;
-    char existeOperador2=0;
+    char operando1=0;
+    char operando2=0;
     float num1;
     float num2;
 
@@ -16,12 +16,12 @@ int main(){
         system("cls");
         fflush(stdin);
 
-        if(existeOperador1){
+        if(operando1){
             printf("1- Ingresar 1er operando (A=%.2f)\n",num1);
         }else{
             printf("1- Ingresar 1er operando (A=x)\n");
         }
-        if(existeOperador2){
+        if(operando2){
             printf("2- Ingresar 2do operando (B=%.2f)\n",num2);
         }else{
             printf("2- Ingresar 2do operando (B=y)\n");
@@ -40,87 +40,34 @@ int main(){
         {
             case 1:
                 num1=leerNumero();
-                existeOperador1=1;
+                operando1=1;
                 break;
             case 2:
                 num2=leerNumero();
-                existeOperador2=1;
+                operando2=1;
                 break;
             case 3:
-                if(existeOperador1 && existeOperador2){
-                    imprimirResultado(funcionSuma(num1,num2));
-                }else{
-                    imprimirError(1);
-                }
+                existenOperandos(operando1,operando2,3,num1,num2);
                 getche();
                 break;
             case 4:
-                if(existeOperador1 && existeOperador2){
-                    imprimirResultado(funcionResta(num1,num2));
-                }else{
-                    imprimirError(1);
-                }
+                existenOperandos(operando1,operando2,4,num1,num2);
                 getche();
                 break;
             case 5:
-                if(existeOperador1 && existeOperador2){
-                    if(num2!=0){
-                        imprimirResultado(funcionDivision(num1,num2));
-                    }else{
-                        imprimirError(3);
-                    }
-                }else{
-                    imprimirError(1);
-                }
+                existenOperandos(operando1,operando2,5,num1,num2);
                 getche();
                 break;
             case 6:
-                if(existeOperador1 && existeOperador2){
-                    imprimirResultado(funcionMultiplicacion(num1,num2));
-                }else{
-                    imprimirError(1);
-                }
+                existenOperandos(operando1,operando2,6,num1,num2);
                 getche();
                 break;
             case 7:
-                if(existeOperador1){
-                    if(esEntero(num1)){
-                        imprimirResultado(funcionFactorial(num1));
-                    }else{
-                        imprimirError(4);
-                    }
-                }else{
-                    imprimirError(2);
-                }
+                existenOperandos(operando1,operando2,7,num1,num2);
                 getche();
                 break;
             case 8:
-                if(existeOperador1 && existeOperador2){
-                    printf("Suma:\n");
-                    imprimirResultado(funcionSuma(num1,num2));
-                    printf("Resta:\n");
-                    imprimirResultado(funcionResta(num1,num2));
-                    printf("Division:\n");
-                    if(num2!=0){
-                        imprimirResultado(funcionDivision(num1,num2));
-                    }else{
-                        imprimirError(3);
-                    }
-                    printf("Multiplicacion:\n");
-                    imprimirResultado(funcionMultiplicacion(num1,num2));
-                }else{
-                    imprimirError(5);
-                }
-                if(existeOperador1){
-                        if(esEntero(num1)){
-                            printf("Factorial:\n");
-                            imprimirResultado(funcionFactorial(num1));
-                        }else{
-                            imprimirError(4);
-                        }
-                }else{
-                    imprimirError(2);
-                }
+                existenOperandos(operando1,operando2,8,num1,num2);
                 getche();
                 break;
             case 9:
