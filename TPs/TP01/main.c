@@ -1,3 +1,13 @@
+/**
+ * @brief Archivo principal (TP01).
+ *
+ * El archivo contiene el main principal del TP01.
+ * @file main.c
+ * @author Juan Ignacio Guglielmone
+ * @date 14/04/2018
+ *
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>

@@ -1,3 +1,13 @@
+/**
+ * @brief Archivo de implementacion de funciones (TP01).
+ *
+ * El archivo contiene las implementaciones de todas las funciones del TP01.
+ * @file funciones.c
+ * @author Juan Ignacio Guglielmone
+ * @date 14/04/2018
+ *
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "funciones.h"

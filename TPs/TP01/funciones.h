@@ -1,10 +1,10 @@
 /**
+ * @brief Archivo de definicion de funciones (TP01).
+ *
+ * El archivo contiene la definicion de todas las funciones del TP01.
  * @file funciones.h
  * @author Juan Ignacio Guglielmone
  * @date 14/04/2018
- * @brief Archivo de funciones del TP01
- *
- * El archivo contiene la definiciond e todas las funciones del TP01.
  *
 */
 
