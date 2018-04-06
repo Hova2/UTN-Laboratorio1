@@ -1,16 +1,7 @@
-/**
- * @brief Archivo principal (TP01).
- *
- * El archivo contiene el main principal del TP01.
- * @file main.c
- * @author Juan Ignacio Guglielmone
- * @date 14/04/2018
- *
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <float.h>
 #include "funciones.h"
 
 int main(){
@@ -27,12 +18,20 @@ int main(){
         fflush(stdin);
 
         if(operando1){
-            printf("1- Ingresar 1er operando (A=%.2f)\n",num1);
+            if(esEntero(num1)){
+                printf("1- Ingresar 1er operando (A=%.0f)\n",num1);
+            }else{
+                printf("1- Ingresar 1er operando (A=%.2f)\n",num1);
+            }
         }else{
             printf("1- Ingresar 1er operando (A=x)\n");
         }
         if(operando2){
-            printf("2- Ingresar 2do operando (B=%.2f)\n",num2);
+            if(esEntero(num2)){
+                printf("2- Ingresar 2do operando (B=%.0f)\n",num2);
+            }else{
+                printf("2- Ingresar 2do operando (B=%.2f)\n",num2);
+            }
         }else{
             printf("2- Ingresar 2do operando (B=y)\n");
         }
@@ -50,11 +49,19 @@ int main(){
         {
             case 1:
                 num1=leerNumero();
-                operando1=1;
+                if(rangoValido(num1)){
+                    operando1=1;
+                }else{
+                    operando1=0;
+                }
                 break;
             case 2:
                 num2=leerNumero();
-                operando2=1;
+                if(rangoValido(num2)){
+                    operando2=1;
+                }else{
+                    operando2=0;
+                }
                 break;
             case 3:
                 existenOperandos(operando1,operando2,3,num1,num2);

@@ -1,15 +1,6 @@
-/**
- * @brief Archivo de implementacion de funciones (TP01).
- *
- * El archivo contiene las implementaciones de todas las funciones del TP01.
- * @file funciones.c
- * @author Juan Ignacio Guglielmone
- * @date 14/04/2018
- *
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <float.h>
 #include "funciones.h"
 
 float leerNumero(void){
@@ -25,6 +16,13 @@ float leerNumero(void){
 
 char esEntero(float num){
     if((num-(int)num)==0){
+        return 1;
+    }
+    return 0;
+}
+
+char rangoValido(float num){
+    if(num>=-FLT_MAX && num<=FLT_MAX){
         return 1;
     }
     return 0;
