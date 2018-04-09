@@ -1,3 +1,13 @@
+/**
+ * @brief Archivo de implementacion de funciones (TP01).
+ *
+ * El archivo contiene las implementaciones de todas las funciones del TP01.
+ * @file funciones.c
+ * @author Juan Ignacio Guglielmone
+ * @date 14/04/2018
+ *
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <float.h>
@@ -29,42 +39,46 @@ char rangoValido(float num){
 }
 
 void imprimirResultado(int codigo,float result){
-     if(esEntero(result)){
-         switch(codigo){
-            case 3:
-                printf("El resultado de la suma es: %.0f\n",result);
-                break;
-            case 4:
-                printf("El resultado de la resta es: %.0f\n",result);
-                break;
-            case 5:
-                printf("El resultado de la division es: %.0f\n",result);
-                break;
-            case 6:
-                printf("El resultado de la multiplicacion es: %.0f\n",result);
-                break;
-            case 7:
-                printf("El resultado del factorial es: %.0f\n",result);
-                break;
-         }
-     }else{
-        switch(codigo){
-            case 3:
-                printf("El resultado de la suma es: %.2f\n",result);
-                break;
-            case 4:
-                printf("El resultado de la resta es: %.2f\n",result);
-                break;
-            case 5:
-                printf("El resultado de la division es: %.2f\n",result);
-                break;
-            case 6:
-                printf("El resultado de la multiplicacion es: %.2f\n",result);
-                break;
-            case 7:
-                printf("El resultado del factorial es: %.2f\n",result);
-                break;
+    if(rangoValido(result)){
+        if(esEntero(result)){
+            switch(codigo){
+                case 3:
+                    printf("El resultado de la suma es: %.0f\n",result);
+                    break;
+                case 4:
+                    printf("El resultado de la resta es: %.0f\n",result);
+                    break;
+                case 5:
+                    printf("El resultado de la division es: %.0f\n",result);
+                    break;
+                case 6:
+                    printf("El resultado de la multiplicacion es: %.0f\n",result);
+                    break;
+                case 7:
+                    printf("El resultado del factorial es: %.0f\n",result);
+                    break;
+            }
+        }else{
+            switch(codigo){
+                case 3:
+                    printf("El resultado de la suma es: %.2f\n",result);
+                    break;
+                case 4:
+                    printf("El resultado de la resta es: %.2f\n",result);
+                    break;
+                case 5:
+                    printf("El resultado de la division es: %.2f\n",result);
+                    break;
+                case 6:
+                    printf("El resultado de la multiplicacion es: %.2f\n",result);
+                    break;
+                case 7:
+                    printf("El resultado del factorial es: %.2f\n",result);
+                    break;
+            }
         }
+     }else{
+        imprimirError(8);
      }
 }
 
@@ -84,6 +98,15 @@ void imprimirError(int codigo){
             break;
         case 5:
             printf("Para las operaciones de suma, resta, division y multiplicacion, ingresar los 2 operandos!!!!\n");
+            break;
+        case 6:
+            printf("El numero a factorear debe ser cero o positivo!!!!\n");
+            break;
+        case 7:
+            printf("El operando esta fuera de rango!!!!\n");
+            break;
+        case 8:
+            printf("El resultado esta fuera de rango!!!!\n");
             break;
      }
 }
@@ -137,7 +160,11 @@ void existeDivision(float num1, float num2){
 void existeFactorial(char operando1,float num1){
     if(operando1){
         if(esEntero(num1)){
-            imprimirResultado(7,funcionFactorial(num1));
+            if(num1>=0){
+                imprimirResultado(7,funcionFactorial(num1));
+            }else{
+                imprimirError(6);
+            }
         }else{
             imprimirError(4);
         }
