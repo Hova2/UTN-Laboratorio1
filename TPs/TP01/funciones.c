@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <conio.h>
 #include <float.h>
 #include "funciones.h"
 
@@ -128,6 +129,7 @@ void existenOperandos(char operando1,char operando2,int opcion, float num1, floa
                     break;
             case 7:
                     existeFactorial(operando1,num1);
+                    getche();
                     break;
             case 8:
                     imprimirResultado(3,funcionSuma(num1,num2));
@@ -182,7 +184,11 @@ float funcionResta(float num1, float num2){
 }
 
 float funcionMultiplicacion(float num1, float num2){
-    return num1*num2;
+    if(num1<0 && num2==0){
+        return 0;
+    }else{
+        return num1*num2;
+    }
 }
 
 float funcionDivision(float num1, float num2){
