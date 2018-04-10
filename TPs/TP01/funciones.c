@@ -41,42 +41,40 @@ char rangoValido(float num){
 
 void imprimirResultado(int codigo,float result){
     if(rangoValido(result)){
-        if(esEntero(result)){
-            switch(codigo){
-                case 3:
-                    printf("El resultado de la suma es: %.0f\n",result);
-                    break;
-                case 4:
-                    printf("El resultado de la resta es: %.0f\n",result);
-                    break;
-                case 5:
-                    printf("El resultado de la division es: %.0f\n",result);
-                    break;
-                case 6:
-                    printf("El resultado de la multiplicacion es: %.0f\n",result);
-                    break;
-                case 7:
-                    printf("El resultado del factorial es: %.0f\n",result);
-                    break;
+        if(codigo!=7){
+            if(esEntero(result)){
+                switch(codigo){
+                    case 3:
+                        printf("El resultado de la suma es: %.0f\n",result);
+                        break;
+                    case 4:
+                        printf("El resultado de la resta es: %.0f\n",result);
+                        break;
+                    case 5:
+                        printf("El resultado de la division es: %.0f\n",result);
+                        break;
+                    case 6:
+                        printf("El resultado de la multiplicacion es: %.0f\n",result);
+                        break;
+                }
+            }else{
+                switch(codigo){
+                    case 3:
+                        printf("El resultado de la suma es: %.2f\n",result);
+                        break;
+                    case 4:
+                        printf("El resultado de la resta es: %.2f\n",result);
+                        break;
+                    case 5:
+                        printf("El resultado de la division es: %.2f\n",result);
+                        break;
+                    case 6:
+                        printf("El resultado de la multiplicacion es: %.2f\n",result);
+                        break;
+                }
             }
         }else{
-            switch(codigo){
-                case 3:
-                    printf("El resultado de la suma es: %.2f\n",result);
-                    break;
-                case 4:
-                    printf("El resultado de la resta es: %.2f\n",result);
-                    break;
-                case 5:
-                    printf("El resultado de la division es: %.2f\n",result);
-                    break;
-                case 6:
-                    printf("El resultado de la multiplicacion es: %.2f\n",result);
-                    break;
-                case 7:
-                    printf("El resultado del factorial es: %.2f\n",result);
-                    break;
-            }
+            printf("El resultado del factorial es: %.0f\n",result);
         }
      }else{
         imprimirError(8);
@@ -202,4 +200,3 @@ float funcionFactorial(float num){
 		return num*funcionFactorial(num-1);
 	}
 }
-
