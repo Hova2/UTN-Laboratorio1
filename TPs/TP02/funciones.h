@@ -1,9 +1,12 @@
 #ifndef FUNCIONES_H_INCLUDED
 #define FUNCIONES_H_INCLUDED
+#define NULL 0
+#define TPERSONA 20
+#define TDATO 50
 
 typedef struct {
 
-    char nombre[50];
+    char nombre[TDATO];
     int edad;
     int estado;
     int dni;
@@ -24,5 +27,10 @@ int obtenerEspacioLibre(EPersona lista[]);
  * @return el indice en donde se encuentra el elemento que coincide con el parametro dni
  */
 int buscarPorDni(EPersona lista[], int dni);
+
+
+void *leerDato(int);
+void inisializarListaPersona(EPersona[]);
+void agregarPersona(EPersona[]);
 
 #endif // FUNCIONES_H_INCLUDED

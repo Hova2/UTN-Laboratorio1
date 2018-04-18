@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "funciones.h"
 
 
@@ -7,9 +8,15 @@ int main()
 {
     char seguir='s';
     int opcion=0;
+    EPersona listaPersona[TPERSONA];
+
+    inisializarListaPersona(listaPersona);
 
     while(seguir=='s')
     {
+        system("cls");
+        fflush(stdin);
+
         printf("1- Agregar persona\n");
         printf("2- Borrar persona\n");
         printf("3- Imprimir lista ordenada por  nombre\n");
@@ -21,6 +28,11 @@ int main()
         switch(opcion)
         {
             case 1:
+                if((char *)leerDato(1)){
+                    printf("Es numero valido\n");
+                }else{
+                    printf("Es numero invalido\n");
+                }
                 break;
             case 2:
                 break;
@@ -32,7 +44,7 @@ int main()
                 seguir = 'n';
                 break;
         }
+        system("pause");
     }
-
     return 0;
 }
