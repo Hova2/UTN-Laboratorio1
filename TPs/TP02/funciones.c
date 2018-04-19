@@ -20,34 +20,35 @@ void inisializarListaPersona(EPersona lista[]){
 void agregarPersona(EPersona lista[]){
     int indice=obtenerEspacioLibre(lista);
 
-
-
 }
 
-void *leerDato(int tipo){
-    char dato[TDATO];
-    void *pDato;
+char *leerString(char *dato){
 
     fflush(stdin);
     gets(dato);
-    switch (tipo){
-        case 1:
-                pDato=dato;
-                while (*(char *)pDato++){
-                    if (!isalpha(*(char *)pDato) && *(char *)pDato!='\0'){
-                        pDato=NULL;
-                        break;
-                    }
-                }
-                break;
-        case 2:
-                pDato=malloc(sizeof(int));
-                if(!(*(int *)pDato=atoi(dato))){
-                    pDato=NULL;
-                }
-                break;
 
+    for(int i=0;i<TDATO && dato[i]!='\0';i++ ){
+        if (!(dato[i] >= 'A' && dato[i] <= 'Z' || dato[i] >= 'a' && dato[i] <= 'z')){
+            dato=NULL;
+            break;
+        }
     }
 
-    return pDato;
+    return dato;
+}
+
+int *leerInt(int *dato){
+
+    fflush(stdin);
+    gets(dato);
+
+    for(int i=0;i<TDATO && dato[i]!='\0';i++ ){
+        if (!(dato[i] >= '0' && dato[i] <= '9')){
+            dato=NULL;
+            break;
+        }
+    }
+
+    return &(atoi(dato));
+
 }

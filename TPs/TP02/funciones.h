@@ -28,8 +28,9 @@ int obtenerEspacioLibre(EPersona lista[]);
  */
 int buscarPorDni(EPersona lista[], int dni);
 
-
-void *leerDato(int);
+char *leerString(char *);
+int *leerInt(int *);
+double *leerDouble();
 void inisializarListaPersona(EPersona[]);
 void agregarPersona(EPersona[]);
 
