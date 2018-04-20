@@ -23,32 +23,58 @@ void agregarPersona(EPersona lista[]){
 }
 
 char *leerString(char *dato){
+    int i=0;
 
     fflush(stdin);
     gets(dato);
-
-    for(int i=0;i<TDATO && dato[i]!='\0';i++ ){
-        if (!(dato[i] >= 'A' && dato[i] <= 'Z' || dato[i] >= 'a' && dato[i] <= 'z')){
-            dato=NULL;
-            break;
-        }
+    if(!(strlen(dato)>TDATO)){
+        do{
+            if (!(*dato++ >= 'A' && *dato++ <= 'Z' || *dato++ >= 'a' && *dato++ <= 'z')){
+                dato=NULL;
+                break;
+            }
+        }while(*dato++!='\0' && i++<TDATO-1);
+    }else{
+        dato=NULL;
     }
 
     return dato;
 }
 
-int *leerInt(int *dato){
+char *leerInt(char *dato){
+    int i=0;
 
     fflush(stdin);
     gets(dato);
-
-    for(int i=0;i<TDATO && dato[i]!='\0';i++ ){
-        if (!(dato[i] >= '0' && dato[i] <= '9')){
-            dato=NULL;
-            break;
-        }
+    if(!(strlen(dato)>TDATO)){
+        do{
+            if (!(*dato++ >= '0' && *dato++ <= '9')){
+                dato=NULL;
+                break;
+            }
+        }while(*dato++!='\0' && i++<TDATO-1);
+    }else{
+        dato=NULL;
     }
 
-    return &(atoi(dato));
+    return dato;
+}
+
+char *leerDouble(char *dato){
+    int i=0;
+
+    fflush(stdin);
+    gets(dato);
+    if(!(strlen(dato)>TDATO)){
+        do{
+            if (!(*dato >= '0' && *dato <= '9') && *dato!='.'){
+                dato=NULL;
+                break;
+            }
+        }while(*dato++!='\0' && i++<TDATO-1);
+    }else{
+        dato=NULL;
+    }
+    return dato;
 
 }

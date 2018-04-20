@@ -8,9 +8,7 @@ int main()
 {
     char seguir='s';
     int opcion=0;
-    char datoS[50];
-    int datosI;
-    void *dato;
+    char dato[TDATO];
     EPersona listaPersona[TPERSONA];
 
     inisializarListaPersona(listaPersona);
@@ -31,8 +29,8 @@ int main()
         switch(opcion)
         {
             case 1:
-                if(leerString(datoS)){
-                    printf("Es numero valido\n");
+                if(leerString(dato)){
+                    printf("Es numero valido - Nro: %s\n",dato);
                 }else{
                     printf("Es numero invalido\n");
                 }
