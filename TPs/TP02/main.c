@@ -4,11 +4,11 @@
 #include "funciones.h"
 
 
+char dato[TDATO];
 int main()
 {
     char seguir='s';
     int opcion=0;
-    char dato[TDATO];
     EPersona listaPersona[TPERSONA];
 
     inisializarListaPersona(listaPersona);
@@ -29,7 +29,7 @@ int main()
         switch(opcion)
         {
             case 1:
-                if(leerString(dato)){
+                if(leerValidarDato(dato,3)){
                     printf("Es numero valido - Nro: %s\n",dato);
                 }else{
                     printf("Es numero invalido\n");
