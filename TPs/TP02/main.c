@@ -4,7 +4,6 @@
 #include "funciones.h"
 
 
-char dato[TDATO];
 int main()
 {
     char seguir='s';
@@ -20,7 +19,7 @@ int main()
 
         printf("1- Agregar persona\n");
         printf("2- Borrar persona\n");
-        printf("3- Imprimir lista ordenada por  nombre\n");
+        printf("3- Imprimir lista ordenada por nombre\n");
         printf("4- Imprimir grafico de edades\n\n");
         printf("5- Salir\n");
 
@@ -29,17 +28,16 @@ int main()
         switch(opcion)
         {
             case 1:
-                if(leerValidarDato(dato,3)){
-                    printf("Es numero valido - Nro: %s\n",dato);
-                }else{
-                    printf("Es numero invalido\n");
-                }
+                agregarPersona(listaPersona);
                 break;
             case 2:
+                borrarPersona(listaPersona);
                 break;
             case 3:
+                imprimirListaOrdenada(listaPersona);
                 break;
             case 4:
+                imprimirGrafico(listaPersona);
                 break;
             case 5:
                 seguir = 'n';
