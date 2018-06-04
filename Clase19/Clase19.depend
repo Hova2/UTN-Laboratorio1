@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1528151511 source:c:\users\iguglielmone_mecon\desktop\juani\git\utn-laboratorio1\clase19\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+
+1528138484 c:\users\iguglielmone_mecon\desktop\juani\git\utn-laboratorio1\clase19\arraylist.h
+
+1528151615 source:c:\users\iguglielmone_mecon\desktop\juani\git\utn-laboratorio1\clase19\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+
+1528135865 c:\users\iguglielmone_mecon\desktop\juani\git\utn-laboratorio1\clase19\employee.h
+
+1528135865 source:c:\users\iguglielmone_mecon\desktop\juani\git\utn-laboratorio1\clase19\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+
+1528138404 source:c:\users\iguglielmone_mecon\desktop\juani\git\utn-laboratorio1\clase19\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Employee.h"
+
