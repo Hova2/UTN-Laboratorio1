@@ -16,13 +16,19 @@
 
 int main(){
 
-    ArrayList* listaEmpleados;
+    ArrayList* listaEmpleados=al_newArrayList();
+    ArrayList* listaEmpleados1=al_newArrayList();
+
+    printf("Elementos: %d\n\n",al_len(listaEmpleados));
+
     Employee* miEmpleado;
     Employee* miEmpleado1;
+    Employee* miEmpleado2;
     Employee* auxEmpleado;
 
     miEmpleado=employee_new();
     miEmpleado1=employee_new();
+    miEmpleado2=employee_new();
 
     employee_setId(miEmpleado,7);
     strcpy(miEmpleado->name,"Juan");
@@ -34,22 +40,44 @@ int main(){
     miEmpleado1->isEmpty=1;
     strcpy(miEmpleado1->lastName,"Yo1");
 
-    listaEmpleados=al_newArrayList();
-
-    printf("Elementos: %d\n\n",al_len(listaEmpleados));
-
     al_add(listaEmpleados,miEmpleado);
     al_add(listaEmpleados,miEmpleado1);
+
+    int tam=al_len(listaEmpleados);
+
+    printf("Elementos: %d\n\n",tam);
+
+    for(int i=0;i<tam;i++){
+        auxEmpleado=(Employee*) al_get(listaEmpleados,i);
+        employee_print(auxEmpleado);
+    }
+
+    /*al_deleteArrayList(listaEmpleados);
+    listaEmpleados=NULL;*/
+
+    printf("%p\n\n",listaEmpleados);
+    al_clear(listaEmpleados);
+    printf("%p\n\n",listaEmpleados);
+
+    for(int i=0;i<tam;i++){
+        auxEmpleado=(Employee*) al_get(listaEmpleados,i);
+        employee_print(auxEmpleado);
+    }
+
+   /*
+
+
+
+    listaEmpleados=al_newArrayList();
+
+
 
     printf("Elementos: %d\n\n",al_len(listaEmpleados));
 
     int tam=al_len(listaEmpleados);
 
-    for(int i=0;i<tam;i++){
-
-        auxEmpleado=(Employee*) al_get(listaEmpleados,i);
-        employee_print(auxEmpleado);
-    }
+    */
 
     return 0;
 }
+
