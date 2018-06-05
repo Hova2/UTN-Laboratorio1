@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "ArrayList.h"
 #include "Employee.h"
+#include "Parser.h"
 
 /****************************************************
     Menu:
@@ -16,7 +17,14 @@
 
 int main(){
 
-    ArrayList* listaEmpleados=al_newArrayList();
+    Employee* auxEmpleado;
+    auxEmpleado=(Employee*)malloc(sizeof(Employee)*10);
+
+    FILE* pArch;
+
+    parserEmployeeNuevo(pArch,auxEmpleado,10);
+
+    /*ArrayList* listaEmpleados=al_newArrayList();
     ArrayList* listaEmpleados1=al_newArrayList();
 
     printf("Elementos: %d\n\n",al_len(listaEmpleados));
@@ -25,6 +33,7 @@ int main(){
     Employee* miEmpleado1;
     Employee* miEmpleado2;
     Employee* auxEmpleado;
+
 
     miEmpleado=employee_new();
     miEmpleado1=employee_new();
@@ -55,14 +64,15 @@ int main(){
     /*al_deleteArrayList(listaEmpleados);
     listaEmpleados=NULL;*/
 
-    printf("%p\n\n",listaEmpleados);
-    al_clear(listaEmpleados);
-    printf("%p\n\n",listaEmpleados);
+    /*printf("\n\n");
+    printf("Direccion: %p\n\n",listaEmpleados);
+    al_deleteArrayList(listaEmpleados);
+    printf("Direccion: %p\n\n",listaEmpleados);*/
 
-    for(int i=0;i<tam;i++){
+    /*for(int i=0;i<tam;i++){
         auxEmpleado=(Employee*) al_get(listaEmpleados,i);
         employee_print(auxEmpleado);
-    }
+    }*/
 
    /*
 

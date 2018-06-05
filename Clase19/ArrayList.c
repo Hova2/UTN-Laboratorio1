@@ -7,7 +7,7 @@ ArrayList* al_newArrayList(void){
     ArrayList *auxArrayList=(ArrayList *)malloc(sizeof(ArrayList));
 
     if(auxArrayList){
-        void* auxPElements=(void *)malloc(sizeof(void *)*AL_INITIAL_VALUE);
+        void** auxPElements=(void **)malloc(sizeof(void *)*AL_INITIAL_VALUE);
         if(auxPElements){
             auxArrayList->size=0;
             auxArrayList->pElements=auxPElements;
@@ -59,6 +59,7 @@ int al_deleteArrayList(ArrayList* pList){
         auxDel=0;
         free(pList->pElements);
         free(pList);
+        pList=NULL;
     }
     return auxDel;
 }
@@ -132,8 +133,8 @@ int al_clear(ArrayList* pList){
         for(int i=0;i<pList->reservedSize;i++){
             free(pList->pElements[i]);
         }
-        free(pList);
-        pList=al_newArrayList();
+        //free(pList);
+        //pList=al_newArrayList();
         auxClear=0;
     }
     return auxClear;

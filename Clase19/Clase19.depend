@@ -27,3 +27,34 @@
 	"ArrayList.h"
 	"Employee.h"
 
+1528202569 source:c:\test\clase19\arraylist.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+
+1528202188 c:\test\clase19\arraylist.h
+
+1528202188 source:c:\test\clase19\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ArrayList.h"
+	"Employee.h"
+
+1528120501 c:\test\clase19\employee.h
+
+1528207800 source:c:\test\clase19\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+	"Parser.h"
+
+1528207829 source:c:\test\clase19\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"ArrayList.h"
+	"Employee.h"
+
+1528207674 c:\test\clase19\parser.h
+
